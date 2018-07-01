@@ -21,4 +21,7 @@ import shane.views as dome_task
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^task/', dome_task.create_task),
+    url(r'^rout/', dome_task.task_router),
+    url(r'^add1001/', dome_task.task_1001),
+    url(r'^add1002/', dome_task.task_1002),
 ]

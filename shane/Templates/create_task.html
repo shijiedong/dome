@@ -10,21 +10,21 @@
   	</head>
   
   <body>
-  	<div style="padding: 00px 100px 10px;">
+  	<div style="padding: 0px 100px 10px;">
   	<div class="jumbotron">
   		<h3>添加任务</h3> 
   		<p>所有任务入口！！！</p> 
 	</div>
-	<form class="bs-example bs-example-form" role="form" action="/add_task" method="post">
+	<form class="bs-example bs-example-form" role="form" action="/rout/" method="post">
 		{% csrf_token %}
 		<div class="input-group">
 			<span class="input-group-addon">任务名称</span>
-			<input type="text" class="form-control" placeholder="twitterhandle">
+			<input type="text" class="form-control" name="task_name">
 		</div>
 		<br>
 		<div class="input-group">
-			<span class="input-group-addon">任务类型</span>
-			<input type="text" class="form-control" placeholder="twitterhandle">
+			<span class="input-group-addon">任务ID</span>
+			<input type="text" class="form-control" name="taski_id">
 		</div>
 		<br>
 		<button type="submit" class="btn  btn-primary btn-lg btn-block">添加任务</button>
