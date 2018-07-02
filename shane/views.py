@@ -13,28 +13,34 @@ def create_task(request):
 
 def task_router(request):
 	print "task_router"
-	strname = request.POST.get('task_name', 'null')
-	strtype = request.POST.get('task_id', 'nill')
-	print strname
-	print strtype
-	task = models.T1_Task.objects.create(strName=strname, nTaskID=strtype )
+	task_name 	= request.POST.get('task_name', 'null')
+	task_id 	= request.POST.get('task_id', 0)
+	print task_name
+	print task_id
+	task = models.T1_Task.objects.create(strName=task_name, nTaskID=task_id )
 	print "taskid:%d" % task.id 
-	if( strtype == 1001 ):
-		return render( request, "financial.html", { 'taskid' : task.id })
-	else:
-		return render( request, "financial.html", { 'taskid' : task.id })
 
+	if( 1001 == task_id ):
+		pass
+		#return render( request, "financial.html", { 'taskid' : task.id })
+	elif( 1002 == task_id):
+		pass
+		#return render( request, "financial.html", { 'taskid' : task.id })
+	elif( 1003 == task_id ):
+		pass
+		#return render( request, "financial.html", { 'taskid' : task.id })
+	return render( request, "financial.html", { 'taskid' : task.id })
 
-def task_1001(request, task_id):
+def task_1001(request,task_id):
 	strname = request.POST.get('name', 'null')
 	strtype = request.POST.get('type', 'nill')
 	print strname
 	print strtype
-	models.T2_MoneyApplyFor.objects.create(strName=strname, strType=strtype )
+	models.T2_MoneyApplyFor.objects.create( strName=strname, strType=strtype )
 
 	return render( request, "financial.html")
 
-def task_1002(request, task_id):
+def task_1002(request,task_id):
 	strname = request.POST.get('name', 'null')
 	strtype = request.POST.get('type', 'nill')
 	print strname
