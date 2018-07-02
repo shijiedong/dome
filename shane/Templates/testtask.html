@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+ <html>
+ 	<head>
+  		<meta charset="UTF-8">
+  		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+		<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  		<title>添加任务</title>
+  	</head>
+  
+  <body>
+  	<div style="padding: 00px 100px 10px;">
+  	<div class="jumbotron">
+  		<h3>测试任务节点</h3> 
+  		<p>流程展示节点</p> 
+	</div>
+	<form class="bs-example bs-example-form" role="form" action="/add_task" method="post">
+		{% csrf_token %}
+		<div class="input-group">
+			<span class="input-group-addon">任务名称</span>
+			<input type="text" class="form-control" placeholder="twitterhandle">
+		</div>
+		<br>
+		<div class="input-group">
+			<span class="input-group-addon">任务类型</span>
+			<input type="text" class="form-control" placeholder="twitterhandle">
+		</div>
+		<br>
+		<button type="submit" class="btn  btn-primary btn-lg btn-block">添加任务</button>
+	</form>
+</div>
+
+  </body>
+</html>

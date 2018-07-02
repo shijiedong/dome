@@ -6,8 +6,7 @@ from django.db import models
 # Create your models here.
 
 """
-
-
+    T1_Task：
 """
 
 class T1_Task(models.Model):
@@ -19,6 +18,12 @@ class T1_Task(models.Model):
 
     def __unicode__(self):
         return self.strName
+
+class T1_Poot(models.Model):
+    nT1_TaskID  = models.IntegerField()                     # 流程ID
+    nTaskID     = models.IntegerField()                     # 任务ID
+    create_at   = models.DateTimeField(auto_now_add=True)   # 创建时间
+
 
 class T2_MoneyApplyFor(models.Model):                       # 任务ID 1001
     nTaskID  = models.IntegerField()                        # 当前任务ID
